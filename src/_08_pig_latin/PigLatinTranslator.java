@@ -1,12 +1,52 @@
 package _08_pig_latin;
 
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+import _06_calculator.Calculator;
+
 public class PigLatinTranslator {
+	PigLatinTranslator (){
+	
+	frame.setVisible(true);
+	frame.add(panel);
+	panel.add(translateToEng);
+	panel.add(translateToPig);
+	panel.add(firstInput);
+	panel.add(secondInput);
+	panel.add(label);
+	
+	/*multiply.addActionListener(this);
+	divide.addActionListener(this);
+	add.addActionListener(this);
+	subtract.addActionListener(this);*/
+	
+	translateToEng.setText("Translate to English");
+	translateToPig.setText("Translate to Pig Latin");
+	frame.pack();
+	}
+	JFrame frame = new JFrame();
+	JPanel panel = new JPanel();
+	JButton translateToEng = new JButton();
+	JButton translateToPig = new JButton();
+	JTextField firstInput = new JTextField(6); 
+	JTextField secondInput = new JTextField(6);
+	JLabel label = new JLabel();
+	public static void main(String[] args) {
+		PigLatinTranslator PigLatinTranslator = new PigLatinTranslator();
+		
+	}
+	
+	
     /**
-     * Method to translate a english to pig latin.
+     * Method to translate English to Pig Latin.
      * 
      * @param s
      *            The sentence in English
-     * @return The pig latin version
+     * @return The pig Latin version
      */
     public static String translateEnglishToPigLatin(String s) {
         String latin = "";
@@ -33,7 +73,7 @@ public class PigLatinTranslator {
     }
     
     /**
-     * Method to translate a pig latin to english.
+     * Method to translate a pig Latin to English.
      * 
      * @param s
      *            The sentence in pig latin
