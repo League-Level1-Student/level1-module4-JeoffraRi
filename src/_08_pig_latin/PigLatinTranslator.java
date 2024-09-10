@@ -1,5 +1,7 @@
 package _08_pig_latin;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -8,36 +10,43 @@ import javax.swing.JTextField;
 
 import _06_calculator.Calculator;
 
-public class PigLatinTranslator {
-	PigLatinTranslator (){
+public class PigLatinTranslator implements ActionListener {
 	
-	frame.setVisible(true);
-	frame.add(panel);
-	panel.add(translateToEng);
-	panel.add(translateToPig);
-	panel.add(firstInput);
-	panel.add(secondInput);
-	panel.add(label);
+	JFrame frame;
+	JPanel panel;
+	JButton translateToEng;
+	JButton translateToPig;
+	JButton speakButton;
+	JTextField firstInput; 
+	JTextField secondInput;
+	JLabel label;
 	
-	/*multiply.addActionListener(this);
-	divide.addActionListener(this);
-	add.addActionListener(this);
-	subtract.addActionListener(this);*/
-	
-	translateToEng.setText("Translate to English");
-	translateToPig.setText("Translate to Pig Latin");
-	frame.pack();
-	}
-	JFrame frame = new JFrame();
-	JPanel panel = new JPanel();
-	JButton translateToEng = new JButton();
-	JButton translateToPig = new JButton();
-	JTextField firstInput = new JTextField(6); 
-	JTextField secondInput = new JTextField(6);
-	JLabel label = new JLabel();
-	public static void main(String[] args) {
-		PigLatinTranslator PigLatinTranslator = new PigLatinTranslator();
+		/*multiply.addActionListener(this);
+		divide.addActionListener(this);
+		add.addActionListener(this);
+		subtract.addActionListener(this);*/
 		
+		public void setup() {
+			frame = new JFrame();
+		}
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		translateToEng.setText("Translate to English");
+		translateToPig.setText("Translate to Pig Latin");
+		speakButton.setText("Speak");
+		frame.pack();
+		
+			frame.setVisible(true);
+			frame.add(panel);
+			panel.add(translateToEng);
+			panel.add(translateToPig);
+			panel.add(speakButton);
+			panel.add(firstInput);
+			panel.add(secondInput);
+			panel.add(label);
+			
+		translateEnglishToPigLatin(firstInput.toString());
 	}
 	
 	
