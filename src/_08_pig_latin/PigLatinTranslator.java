@@ -28,25 +28,43 @@ public class PigLatinTranslator implements ActionListener {
 		
 		public void setup() {
 			frame = new JFrame();
-		}
-	
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		translateToEng.setText("Translate to English");
-		translateToPig.setText("Translate to Pig Latin");
-		speakButton.setText("Speak");
-		frame.pack();
-		
+			panel = new JPanel();
+			translateToEng = new JButton();
+			translateToPig = new JButton();
+			speakButton = new JButton();
+			firstInput = new JTextField();
+			secondInput = new JTextField();
+			label = new JLabel ();
+			
+			translateToEng.setText("Translate to English");
+			translateToPig.setText("Translate to Pig Latin");
+			speakButton.setText("Speak");
+			
+			frame.pack();
 			frame.setVisible(true);
 			frame.add(panel);
+			
+			translateToEng.addActionListener(this);
+			translateToPig.addActionListener(this);
+			
 			panel.add(translateToEng);
 			panel.add(translateToPig);
 			panel.add(speakButton);
 			panel.add(firstInput);
 			panel.add(secondInput);
 			panel.add(label);
-			
-		translateEnglishToPigLatin(firstInput.toString());
+				
+		}
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource()==translateToPig) {
+			String output = translateEnglishToPigLatin(firstInput.toString());
+			secondInput.setText(output);
+		}else if(e.getSource()==translateToEng) {
+			String output = translatePigLatinToEnglish(secondInput.toString());
+			secondInput.setText(output);
+		}
 	}
 	
 	
