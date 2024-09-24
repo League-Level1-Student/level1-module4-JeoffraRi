@@ -59,10 +59,10 @@ public class PigLatinTranslator implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource()==translateToPig) {
-			String output = translateEnglishToPigLatin(firstInput.toString());
+			String output = translateEnglishToPigLatin(firstInput.getText());
 			secondInput.setText(output);
 		}else if(e.getSource()==translateToEng) {
-			String output = translatePigLatinToEnglish(secondInput.toString());
+			String output = translatePigLatinToEnglish(secondInput.getText());
 			secondInput.setText(output);
 		}
 	}
